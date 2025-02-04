@@ -1,38 +1,106 @@
+/* App.css */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100vh;
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.content-container.with-sidebar {
+  margin-left: 15%;
+}
+
+.content-container.without-sidebar {
+  margin-left: 0;
+}
+
+.page-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease; /* Add transition for smooth content adjustment */
+}
+
+/* Adjust the styling for the login and register pages */
+.login-container,
+.register-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh; /* Full height for the login and register pages */
+  background-color: #f0f0f0; /* Background color */
 }
 
-.App-link {
-  color: #61dafb;
+/* Card styles for the login and register pages */
+.card {
+  background: white;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+  padding: 30px; /* Padding inside the card */
+  width: 400px; /* Fixed width for cards */
+  text-align: center; /* Center text inside the card */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Additional styles for card content */
+.card-header {
+  font-size: 1.5rem; /* Header font size */
+  margin-bottom: 10px; /* Space below header */
+}
+
+.card-body {
+  font-size: 1rem; /* Body font size */
+  margin-bottom: 15px; /* Space below body content */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+}
+
+/* Add hover effect for cards */
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add responsive breakpoints */
+:root {
+    --sidebar-width: 250px;
+    --header-height: 60px;
+}
+
+@media (max-width: 768px) {
+    .content-container.with-sidebar {
+        margin-left: 0;
+    }
+    
+    .sidebar {
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .sidebar.visible {
+        transform: translateX(0);
+    }
+    
+    .page-content {
+        padding: 10px;
+    }
+}
+
+/* Add dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --primary-color: #bb86fc;
+    }
 }

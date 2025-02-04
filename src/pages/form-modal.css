@@ -1,0 +1,107 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Bring to front */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff; /* White background for modal */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside modal */
+    width: 600px; /* Adjusted width for horizontal layout */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Heading Style */
+.modal-content h2 {
+    margin: 0 0 20px; /* Margin below heading */
+    font-size: 24px; /* Font size for heading */
+    text-align: center; /* Centered heading */
+}
+
+/* Form Group */
+.form-group {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+/* Label Style */
+label {
+    font-weight: bold; /* Bold labels */
+    margin-right: 10px; /* Space between label and input */
+    width: 120px; /* Fixed width for labels */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"],
+select {
+    flex: 1; /* Allow inputs to fill remaining space */
+    padding: 8px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff; /* Button color */
+    color: #fff; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    font-size: 16px; /* Font size for button */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Cancel Button Style */
+button[type="button"] {
+    background-color: #ccc; /* Light gray for cancel button */
+    margin-left: 10px; /* Space between buttons */
+}
+
+button[type="button"]:hover {
+    background-color: #999; /* Darker gray on hover */
+}
+
+/* Special Styles for Select and Custom Inputs */
+.form-group-inline {
+    display: flex; /* Use flexbox for inline elements */
+    align-items: center; /* Center items vertically */
+    flex: 1; /* Allow the inline group to fill remaining space */
+    margin-bottom: 15px; /* Add margin below each inline group */
+}
+
+/* Space between dropdown and custom input */
+.form-group-inline select {
+    margin-right: 10px; /* Space between select and input */
+}
+
+/* Custom Input Field Styles */
+.custom-input {
+    flex: 0 0 200px; /* Fixed width for custom input */
+    margin-left: 10px; /* Space to the left of custom input */
+}

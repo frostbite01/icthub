@@ -1,0 +1,247 @@
+/* src/inandout.css */
+
+/* Main container styling */
+.inandout {
+    min-height: 1300px;
+    padding: 30px; /* Spacious feel */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the container without extra left space */
+    max-width: 1200px; /* Maximum width for uniformity */
+}
+
+/* Title styling */
+.inandout h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Description styling */
+.inandout p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Button styling */
+.inandout button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    margin: 10px 0;
+}
+
+.inandout button:hover {
+    background-color: #21618c;
+    transform: translateY(-2px);
+}
+
+/* Table container styling */
+.table-container {
+    width: 100%;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+/* Header styling */
+.table thead {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    color: white;
+}
+
+.table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Zebra striping for table body rows */
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Body styling */
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(41, 128, 185, 0.1);
+}
+
+.table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Action buttons in the table */
+.table td button {
+    display: contents;
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.table td button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Input container styling */
+.inputcontainer {
+    margin-top: 30px;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: max-content;
+}
+
+.pagination button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 8px 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #21618c;
+    transform: scale(1.1);
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .inandout {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    .pagination button {
+        padding: 6px 10px;
+    }
+}
+
+/* Button styling */
+.edit-button,
+.delete-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.edit-icon,
+.delete-icon {
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Sort icon styling */
+.sort-icon {
+    margin-left: 8px;
+    font-size: 0.8em;
+}
+
+th {
+    position: relative;
+    padding-right: 16px;
+}
+
+.sort-icon {
+    position: absolute;
+    right: 8px;
+}
+
+/* Filter styling */
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filters input[type="text"] {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.filters input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.filters select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filters select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.filters select option {
+    padding: 0.5rem;
+}

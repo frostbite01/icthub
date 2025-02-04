@@ -1,0 +1,50 @@
+.transaction-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.transaction-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px; /* Adjust width as needed */
+}
+
+/* Styles for the toggle buttons */
+.transaction-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Space below the toggle */
+}
+
+.transaction-toggle button {
+    flex: 1; /* Make buttons equal width */
+    padding: 10px;
+    margin: 0 5px; /* Space between buttons */
+    border: 1px solid #ccc; /* Border style */
+    background: #f9f9f9; /* Default background */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Highlight the active button */
+.transaction-toggle button.active {
+    background: #0044cc; /* Active button background */
+    color: white; /* Active button text color */
+    border-color: #0044cc; /* Active button border color */
+}
+
+/* Focus style */
+.transaction-toggle button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(0, 68, 204, 0.5); /* Blue glow effect */
+}

@@ -1,0 +1,70 @@
+/* home.css */
+
+/* Main container styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #f8f9fa; /* Light background color */
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title styles */
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #ff0000; /* Use your brand color */
+  margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+.home-container p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Call to action section */
+.cta-section {
+  margin-top: 30px;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  color: #ff0000; /* Brand color for emphasis */
+}
+
+.cta-section p {
+  font-size: 1rem;
+  color: #555; /* A bit lighter color for subtext */
+}
+
+/* Explore button styles */
+.explore-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0000; /* Brand color */
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #d00000; /* Darker shade for hover effect */
+}
+
+/* Chart container styles */
+.chart-container {
+  width: 100%; /* Full width or customize as per design */
+  height: 400px; /* Fixed height for the chart */
+  display: flex; /* Optional, for centering or aligning content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #ffffff; /* Optional background for clarity */
+  border: 1px solid #ddd; /* Optional border for visibility */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}

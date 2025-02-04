@@ -1,0 +1,21 @@
+.sidebar-toggle-button {
+    position: fixed;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    transition: left 0.3s ease, background-color 0.3s;
+}
+
+.sidebar-toggle-button.closed {
+    left: 0;
+}
+
+.sidebar-toggle-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}

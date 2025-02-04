@@ -1,0 +1,62 @@
+/* Sidebar Container */
+.sidebar {
+  border-right: 1px solid #000000;
+  background-color: #ff0000;
+  width: 16%;
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Sidebar Heading */
+h2 {
+  font-size: large;
+  color: #ffffff;  /* White color for text */
+  text-decoration: none;  /* Remove underline from links */  
+  text-align: center; /* Center the text */
+  margin: 100px 0; /* Keep original margin for spacing above and below the heading */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for the heading */
+}
+
+/* Navigation link styling */
+.navigation-link {
+  display: block; /* Display links as block to stack vertically */
+  text-decoration: none; /* Remove underline from links */
+  color: #ffffff; /* Explicit color for links */
+  padding: 10px 15px; /* Add padding for spacing */
+  transition: transform 0.2s ease, color 0.2s ease; /* Smooth transitions */
+  border-radius: 4px; /* Added rounded edges for links */
+}
+
+/* Hover Effect on Navigation Links */
+.navigation-link:hover {
+  transform: scale(1.05); /* Slight scale on hover for interaction */
+  color: #ffffff; /* Change to white on hover for contrast */
+  background-color: rgba(0, 0, 0, 0.2); /* Subtle background color on hover */
+}
+
+/* Active Link Styling */
+.navigation-link.active {
+  background-color: rgba(0, 123, 255, 0.3); /* Highlight the active link */
+  font-weight: bold; /* Make the active link bold */
+}
+
+/* Optional: Styling for visited links */
+.navigation-link:visited {
+  color: #ffffff; /* Keep visited links white */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80%; /* Make it wider on smaller screens */
+  }
+}

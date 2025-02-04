@@ -1,0 +1,20 @@
+.alert {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center both text and button horizontally */
+    text-align: center;     /* Center-align text */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* Neutral color */
+    color: #000000;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    z-index: 1100;
+    transition: opacity 0.5s;
+}
+.alert button{
+    display: block;
+}
