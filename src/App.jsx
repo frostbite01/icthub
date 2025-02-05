@@ -11,6 +11,7 @@ import TaskList from './components/tasks/TaskList';
 const Login = React.lazy(() => import('./components/auth/Login'));
 const Dashboard = React.lazy(() => import('./components/dashboard/Dashboard'));
 const Inventory = React.lazy(() => import('./components/inventory/Inventory'));
+const History = React.lazy(() => import('./components/history/History'));
 
 const LoadingFallback = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -39,6 +40,7 @@ const App = () => {
                 <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                 <Route path="/inventory" element={<ProtectedRoute><Inventory /></ProtectedRoute>} />
                 <Route path="/tasks" element={<ProtectedRoute><TaskList /></ProtectedRoute>} />
+                <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
               </Routes>
             </Suspense>
           </Layout>

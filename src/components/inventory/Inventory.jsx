@@ -10,19 +10,23 @@ import {
   Container,
   Typography,
   TextField,
-  InputAdornment
+  InputAdornment,
+  Button
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { 
   fetchInventory, 
   fetchDashboardData,
 } from '../../api/api';
 import SearchIcon from '@mui/icons-material/Search';
+import HistoryIcon from '@mui/icons-material/History';
 import InventoryTable from './InventoryTable';
 import InventoryCards from './InventoryCards';
 import ErrorBoundary from '../ErrorBoundary';
 import ProtectedRoute from '../auth/ProtectedRoute';
 
 const Inventory = () => {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     loading: false,
     error: null,
@@ -104,6 +108,11 @@ const Inventory = () => {
     fetchData({ category: categoryFilter, type: typeFilter });
   }, [categoryFilter, typeFilter]);
 
+  // Add handler for history navigation
+  const handleHistoryClick = () => {
+    navigate('/history');
+  };
+
   if (state.loading && !state.items.length) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
@@ -121,9 +130,20 @@ const Inventory = () => {
       <ProtectedRoute>
         <Container maxWidth="xl">
           <Box sx={{ mb: 4 }}>
-            <Typography variant="h4" sx={{ mb: 3 }}>
-              Inventory Management
-            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+              <Typography variant="h4">
+                Inventory Management
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={<HistoryIcon />}
+                onClick={handleHistoryClick}
+                sx={{ ml: 2 }}
+              >
+                View History
+              </Button>
+            </Box>
             <ErrorBoundary>
               <InventoryCards 
                 statistics={statistics}
