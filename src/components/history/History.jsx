@@ -99,30 +99,40 @@ const History = () => {
               <TableRow>
                 <StyledTableCell>Date</StyledTableCell>
                 <StyledTableCell>Item Name</StyledTableCell>
-                <StyledTableCell>Type</StyledTableCell>
                 <StyledTableCell>Category</StyledTableCell>
-                <StyledTableCell>Quantity</StyledTableCell>
-                <StyledTableCell>Description</StyledTableCell>
+                <StyledTableCell>Type</StyledTableCell>
+                <StyledTableCell>Change Type</StyledTableCell>
+                <StyledTableCell>Quantity New</StyledTableCell>
+                <StyledTableCell>Quantity Used</StyledTableCell>
+                <StyledTableCell>Unit</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {loading ? (
                 <TableRow>
-                  <TableCell colSpan={6} align="center">Loading...</TableCell>
+                  <TableCell colSpan={8} align="center">Loading...</TableCell>
                 </TableRow>
               ) : displayedLogs.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={6} align="center">No records found</TableCell>
+                  <TableCell colSpan={8} align="center">No records found</TableCell>
                 </TableRow>
               ) : (
                 displayedLogs.map((log) => (
                   <TableRow key={log.id} hover>
-                    <TableCell>{new Date(log.date).toLocaleDateString()}</TableCell>
+                    <TableCell>
+                      {new Date(log.timestamp).toLocaleString()}
+                    </TableCell>
                     <TableCell>{log.name}</TableCell>
-                    <TableCell>{log.type}</TableCell>
                     <TableCell>{log.category}</TableCell>
-                    <TableCell>{log.quantity}</TableCell>
-                    <TableCell>{log.description}</TableCell>
+                    <TableCell>{log.type}</TableCell>
+                    <TableCell sx={{ 
+                      color: log.change_type === 'inbound' ? 'success.main' : 'error.main'
+                    }}>
+                      {log.change_type}
+                    </TableCell>
+                    <TableCell>{log.quantity_new}</TableCell>
+                    <TableCell>{log.quantity_used}</TableCell>
+                    <TableCell>{log.unit}</TableCell>
                   </TableRow>
                 ))
               )}
